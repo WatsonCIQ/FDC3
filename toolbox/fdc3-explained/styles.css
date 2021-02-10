@@ -98,3 +98,10 @@ select {
   height: 40px;
   font-weight: 700;
 }
+
+#context-result{
+  border: 1px solid white;
+  padding: 17px;
+  color: #9fffa2;
+  font-family: monospace;
+}

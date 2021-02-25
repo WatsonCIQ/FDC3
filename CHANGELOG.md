@@ -2,33 +2,86 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
-## [1.0.0] - 2019-03-28
+### Added
+* [API] New raiseIntentForContext method (#268)
+* [API] Add fdc3Ready event to API specification (#269)
+* [API] Add optional appId and version properties to AppMetadata (#273)
+* [API] Define new Target type for use with open and raiseIntent (#279)
+* [Package] Build and publish an npm package for FDC3 (#252)
+* [Package] Add enums for intents and context types (#264)
+* [Package] Add ES6 module support to FDC3 API package (#266)
 
-First official release of FDC3 at https://fdc3.finos.org, consisting of:
-* [API Specification 1.0](https://fdc3.finos.org/docs/1.0/api/api-spec)
-* [Intents Specification 1.0](https://fdc3.finos.org/docs/1.0/intents-spec)
-* [Context Data Specification 1.0](https://fdc3.finos.org/docs/1.0/context-spec)
-* [App Directory Specification 1.0](https://fdc3.finos.org/docs/1.0/appd-spec)
-* [Use Cases 1.0](https://fdc3.finos.org/docs/1.0/use-cases/overview)
+### Changed
+* [API] Allow AppMetadata to be passed in as a target argument (#272)
+* [API] Reject/throw as appropriate in ES6 exported methods if window.fdc3 is not available (#277)
+* [API] Clarify docs for broadcast functions to prevent message loops (#285)
+* [Website] Add Genesis logo (#209)
+* [Website] Change ChartIQ logo to Cosaic after rebrand (#225)
+* [Website] Update "Get Involved" with standards governance info (#228, #249, #300, #286)
 
-Thank you to the following contributors who helped with this release:
+### Fixed
+* [API] Missing/wrong type signature for getCurrentChannel (#222)
+* [API] Support nullable return type for getCurrentChannel (#282)
+* [API] Implement missing leaveCurrentChannel method (#283)
+* [Schemas] Correct invalid schema references (#224)
+* [Docs] Fix raiseIntent examples (#211)
+* [Docs] Fix Portfolio context data example (#251)
 
-* @ColinEberhardt
-* @tschady
-* @donbasuno
-* @sbloodgood
-* @jonathanteperJPMC
-* @kjones207
-* @rikoe
-* @RichLinnell
-* @nkolba
-* @saori-tr
+### Technical
+* [Readme] Fix AppDirectory Readme (#274)
+* [Readme] Update main Readme (#275)
+* [GitHub] Remove FINOS SVG from project root (#204)
+* [GitHub] Switch builds from Travis to GitHub workflows (#239, #252, #253, #254)
+* [GitHub] Meeting workflows and templates (#292, #293)
+* [Security] Upgrade dependencies to address security vulnerabilities (#207, #226, #232, #235, #238, #258, #259, #260, #289, #290, #295, #297)
 
+## [1.1] - 2020-04-09
+### Added
+* JSON Schema definitions for agreed context types ([#119](https://github.com/finos/FDC3/pull/119)):
+    - `fdc3.context`
+    - `fdc3.instrument`
+    - `fdc3.instrumentList`
+    - `fdc3.contact`
+    - `fdc3.contactList`
+    - `fdc3.organization`
+    - `fdc3.country`
+    - `fdc3.position`
+    - `fdc3.portfolio`
+* API entry point for web - `window.fdc3` ([#139](https://github.com/finos/FDC3/pull/139))
+* Use Case 17 ([#153](https://github.com/finos/FDC3/pull/153))
+* Channels API ([#154](https://github.com/finos/FDC3/pull/154)):
+    - `fdc3.getSystemChannels`
+    - `fdc3.getOrCreateChannel`
+    - `fdc3.joinChannel`
+    - `fdc3.leaveCurrentChannel`
+    - `fdc3.getCurrentChannel`
+    - `Channel` interface
+    - `DisplayMetadata` interface
+    - `ChannelError` type
+* Type filtering support for `getCurrentContext` ([#161](https://github.com/finos/FDC3/pull/161))
+* Publish versioned JSON schemas to FDC3 website ([#170](https://github.com/finos/FDC3/pull/170))
+
+### Changed
+* Expand `AppMetadata` interface with more application properties ([#157](https://github.com/finos/FDC3/pull/157))
+
+### Fixed
+* Upgrade dependencies to address security vulnerabilities
+
+### Docs
+* Remove FactSet-specific examples ([#88](https://github.com/finos/FDC3/pull/88))
+* Add Intent Reference and Context Data Reference ([#172](https://github.com/finos/FDC3/pull/172))
+* Restructure some docs ([#190](https://github.com/finos/FDC3/pull/190))
+* Fix several typos and broken links
+
+### Website
+* Apply FINOS branding, styles and logos to the website ([#96](https://github.com/finos/FDC3/pull/96))
+* Add ChartIQ to "Who is using FDC3?" section on website ([#100](https://github.com/finos/FDC3/pull/100))
+
+## [1.0] - 2019-03-28
 ### Added
 * Use Case 15 ([#49](https://github.com/finos/FDC3/pull/49))
 * FDC3 Roadmap ([#55](https://github.com/finos/FDC3/pull/55))
@@ -49,17 +102,6 @@ Thank you to the following contributors who helped with this release:
 * Add hyperlink to FDC3 Intro doc ([#69](https://github.com/finos/FDC3/pull/69))
 
 ## [1.0.0-beta] - 2019-03-05
-
-Initial beta release of the combined FDC3 repository and the FDC3 website hosted at https://fdc3.finos.org.
-
-Thank you to the following contributors who helped with this release:
-* @nkolba
-* @rikoe
-* @espenove
-* @RichLinnell
-* @maoo
-* @brooklynrob
-
 ## Added
 * API content from [FDC3/API](https://github.com/FDC3/API).
 * Intent content from [FDC3/Intents](https://github.com/FDC3/Intents).
@@ -69,6 +111,7 @@ Thank you to the following contributors who helped with this release:
 * Documentation website generated with [Docusaurus](https://docusaurus.io).
 
 
-[Unreleased]: https://github.com/finos/FDC3/compare/v1.0.0..HEAD
-[1.0.0]: https://github.com/finos/FDC3/compare/v1.0.0..v1.0.0-beta
+[Unreleased]: https://github.com/finos/FDC3/compare/v1.1..HEAD
+[1.1]: https://github.com/finos/FDC3/compare/v1.1..v1.0
+[1.0]: https://github.com/finos/FDC3/compare/v1.0..v1.0.0-beta
 [1.0.0-beta]: https://github.com/finos/FDC3/releases/tag/v1.0.0-beta

@@ -20,7 +20,7 @@ const siteConfig = {
   baseUrl: '/',
   // For publishing to GitHub pages
   projectName: 'FDC3',
-  organizationName: 'FDC3',
+  organizationName: 'finos',
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     
@@ -30,8 +30,6 @@ const siteConfig = {
     {doc: 'why-fdc3', label: 'Why FDC3'}
    //, {blog: true, label: 'News'}
   ],
-
-  defaultVersionShown: '1.0',
 
   twitterUsername: 'FDC3_',
 
@@ -95,7 +93,10 @@ const siteConfig = {
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
-  repoUrl: 'https://github.com/finos/FDC3'
+  repoUrl: 'https://github.com/finos/FDC3',
+
+  //Google Analytics tracking ID to track page views.
+  gaTrackingId: 'UA-89349362-8'
 };
 
-module.exports = siteConfig;
+module.exports = siteConfig

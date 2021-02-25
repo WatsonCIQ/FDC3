@@ -20,28 +20,43 @@ function Help(props) {
   const docUrl = doc => `${baseUrl}${docsPart}${langPart}${doc}`;
 
   const supportLinks = [
-    //{
-    //  content: `Learn more using the [documentation on this site.]($///// {docUrl(
-    //    'doc1.html',
-    //  )})`,
-    //  title: 'Browse the FDC3 Wiki',
-    //}
     {
-      content: `The [FDC3 Wiki](https://finosfoundation.atlassian.net/wiki/spaces/FDC3/overview) has a ton of information about the day-to-day, week-to-week operations of the team building out the FDC3 standard, including meeting schedules, minutes, roadmaps, and release plans.`,
-      title: `Browse the FDC3 Wiki`,
+      title: `Collaborate with the Community`,
+      content: 
+        `Most FDC3 collaboration takes place in the [FDC3 GitHub repository](https://github.com/finos/FDC3), 
+        where you can raise [issues](https://github.com/finos/FDC3/issues), 
+        submit [pull requests](https://github.com/finos/FDC3/pulls) 
+        and view [meeting minutes](https://github.com/finos/FDC3/issues?q=label%3Ameeting+).`,
     },
     {
-      content: 'Email [fdc3+subscribe@finos.org](mailto:fdc3+subscribe@finos.org) to join the program\'s general mailing list to stay up to date with program activities and focus areas. Additional mailing lists for the program\'s working groups can be found on the [FDC3 Wiki](https://finosfoundation.atlassian.net/wiki/spaces/FDC3/overview).',
-      title: 'Subcribe to the FDC3 General Mailing List',
+      title: `Learn more about the Standard`,
+      content: 
+      `[Join the General List](mailto:fdc3+subscribe@finos.org) (and check out the 
+      [archives](https://groups.google.com/a/finos.org/forum/#!forum/fdc3)) to stay up to date with the project. 
+      You can also attend the quarterly 
+      [FDC3 General Meeting](https://github.com/finos/FDC3/issues?q=label%3A%22General+Meeting%22): 
+      you can find meeting details in the 
+      [FINOS Project Calendar](https://calendar.google.com/calendar/u/0/embed?src=finos.org_fac8mo1rfc6ehscg0d80fi8jig@group.calendar.google.com).`,
     },
     {
-      content: `Attending an FDC3 general meeting is a great way to learn about what's going on with the program. Our next meeting is March 5th. [See the meeting call-in information and the full schedule on the FDC3 Wiki.](https://finosfoundation.atlassian.net/wiki/spaces/FDC3/pages/24150019/FDC3+General+Meeting)`,
-      title: 'Attend the Next General Meeting',
+      title: `Participate in the Standard's ideation` ,
+      content: 
+      `The [Standard Working Group](https://github.com/finos/FDC3/issues?q=label%3A%22Standard+WG+Meeting%22) 
+      meets once a month to shape the next version of the Standard: you can find meeting details in the 
+      [FINOS Project Calendar](https://calendar.google.com/calendar/u/0/embed?src=finos.org_fac8mo1rfc6ehscg0d80fi8jig@group.calendar.google.com). 
+      If you'd like to formally enroll as a voting Standard participant, 
+      please follow [these instructions](https://github.com/finos/fdc3#participate-in-the-standard-process).`,
     },
     {
-      content: `E-mail [fdc3@finos.org](mailto:fdc3@finos.org)  to introduce yourself and ask any questions you might have of the program's active participants and contributors.`,
-      title: 'Send an Email to the FDC3 Community' ,
+      title: `Are you using FDC3?`,
+      content: 
+      `If you are an existing user of the FDC3 Standard, we would love to hear from you: 
+      just email the [FDC3 General List](fdc3@finos.org) with details about how you are using it. 
+      If you'd like to be listed as a user on our [homepage](fdc3.finos.org), 
+      you can directly [send a pull request](https://github.com/finos/FDC3/edit/master/website/data/users.json) or, 
+      [contact us](fdc3-private@finos.org) if you need help with legal evaluation of your logo.`,
     },
+  
   ];
 
   return (
@@ -51,7 +66,7 @@ function Help(props) {
           <header className="postHeader">
             <h1>Get Involved in FDC3</h1>
           </header>
-          <p>The FDC3 standards are the result of the work of a dedicated group of contributors from both <a href="http://www.finos.org/members" target="_blank">FINOS members</a> and non-member contributing organizations alike. Ready to get involved in our community? Here are some ways to get started:
+          <p>The FDC3 Standard is the result of the work of a dedicated group of contributors from both <a href="http://www.finos.org/members" target="_blank">FINOS members</a> and non-member contributing organizations alike. Ready to get involved in our community? Here are some ways to get started:
           </p>
           <GridBlock contents={supportLinks} layout="fourColumn" />
         </div>

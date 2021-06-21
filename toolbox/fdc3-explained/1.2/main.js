@@ -42,9 +42,9 @@ async function populateHTML() {
     //populate available channels list with system channels
     let channelList = document.getElementById("system-channel-list");
 
-    const populateChannelsList = (name) => {
+    const populateChannelsList = (channelID) => {
       let node = document.createElement("li");
-      let textNode = document.createTextNode(name);
+      let textNode = document.createTextNode(channelID);
       node.appendChild(textNode);
       channelList.appendChild(node);
     }
@@ -52,11 +52,9 @@ async function populateHTML() {
     const systemChannels = await fdc3.getSystemChannels();
 
     // for all of the system channels populate dropdowns & lists
-    systemChannels.forEach(({ displayMetadata, id, type }) => {
-      let { name } = displayMetadata;
-      populateChannelsList(name)
-      populateChannelsDropDown(name)
-
+    systemChannels.forEach(({ id }) => {
+      populateChannelsList(id)
+      populateChannelsDropDown(id)
     });
 
     // set the versions of FDC3 Explained in the dropdown
